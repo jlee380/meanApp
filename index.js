@@ -6,7 +6,7 @@ const config = require('./config/database');
 const path = require('path');
 const authentication = require('./routes/authentication')(router);
 const bodyParser = require('body-parser');
-const cors = required('cors');
+const cors = require('cors');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.uri, (err) => {

@@ -93,17 +93,15 @@ export class RegisterComponent implements OnInit {
     }
     console.log(user);
 
-
     this.authService.registerUser(user).subscribe(data => {
-      console.log(data);
-      // if(!data.success) {
-      //   this.messageClass = 'alert alert-danger';
-      //   this.message = data.message;
-      // }
-      // else {
-      //   this.messageClass = 'alert alert-success';
-      //   this.message = data.message;
-      // }
+      if(!data.success) {
+        this.messageClass = 'alert alert-danger';
+        this.message = data.message;
+      }
+      else {
+        this.messageClass = 'alert alert-success';
+        this.message = data.message;
+      }
     });
 
   }
