@@ -91,17 +91,19 @@ export class RegisterComponent implements OnInit {
       username: this.form.get('username').value,
       password: this.form.get('password').value
     }
+    console.log(user);
 
-    // console.log(user);
+
     this.authService.registerUser(user).subscribe(data => {
-      if(!data.success) {
-        this.messageClass = 'alert alert-danger';
-        this.message = data.message;
-      }
-      else {
-        this.messageClass = 'alert alert-success';
-        this.message = data.message;
-      }
+      console.log(data);
+      // if(!data.success) {
+      //   this.messageClass = 'alert alert-danger';
+      //   this.message = data.message;
+      // }
+      // else {
+      //   this.messageClass = 'alert alert-success';
+      //   this.message = data.message;
+      // }
     });
 
   }

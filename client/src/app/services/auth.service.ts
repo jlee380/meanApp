@@ -6,14 +6,15 @@ import 'rxjs/add/operator/map';
 export class AuthService {
 
 
-  domain = "http://localhost:8080";
+  domain = "http://localhost:8080/";
 
   constructor(
     private http: Http
   ) { }
 
   registerUser(user) {
-    return user.http.post(this.domain + '/authentication/register', user).map(res => res.json());
+    console.log('hit the registerUser function');
+    return user.http.post(this.domain + 'authentication/register', user).map(res => res.json());
   }
 
 }
